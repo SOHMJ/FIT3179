@@ -1,0 +1,80 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Tourism Vs COVID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv",
+        "format": {
+            "type": "csv",
+            "parse": {
+                "date": "date:\"%d/%m/%y\"",
+                "temp": "number"
+            }
+        }
+    },
+    "transform": [
+        {
+          "calculate": "(datum.Lockdown_Type == '') ? 'Not Applicable' : datum.Lockdown_Type",
+          "as": "updated_Lockdown_Type"
+        }
+      ],
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "field": "Date_FirstConfirmedCase",
+            "type": "temporal",
+            "title": "Date of First Confirmed Case"
+        },
+        "y": {
+            "field": "Date_FirstFatality",
+            "type": "temporal",
+            "title": "Date of First Fatality"
+        },
+        "color": {
+            "field": "updated_Lockdown_Type",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Tourism",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "type": "nominal",
+                "title": "Country"
+            },
+            {
+                "field": "Tourism",
+                "type": "quantitative",
+                "title": "Tourism"
+            },
+            {
+                "field": "Date_FirstFatality",
+                "type": "temporal",
+                "title": "Date of First Confirmed Case"
+            },
+            {
+                "field": "Date_FirstFatality",
+                "type": "temporal",
+                "title": "Date of First Fatality"
+            },
+            {
+                "field": "updated_Lockdown_Type",
+                "type": "nominal",
+                "title": "Lockdown Type"
+            }
+        ]
+    },
+    "config": {
+        "axisX": {
+            "title": "Date",
+            "format": "%d %b %y"
+        },
+        "axisY": {
+            "title": "Date",
+            "format": "%d %b %y"
+        }
+    }
+}

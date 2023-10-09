@@ -1,0 +1,71 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Pollution Vs COVID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv"
+    },
+    "layer": [
+        {
+            "mark": "circle",
+            "encoding": {
+                "x": {
+                    "field": "Indoor_Pollution_Death_Rate",
+                    "type": "quantitative",
+                    "title": "Indoor Pollution Death Rate"
+                },
+                "y": {
+                    "field": "Population_Size",
+                    "type": "quantitative",
+                    "title": "Case Fatality Ratio"
+                },
+                "color": {
+                    "value": "#FF0000"
+                },
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "Indoor_Pollution_Death_Rate",
+                        "type": "quantitative",
+                        "title": "Indoor Pollution Death Rate"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": "circle",
+            "encoding": {
+                "x": {
+                    "field": "Outdoor_Pollution_Death_Rate",
+                    "type": "quantitative",
+                    "title": "Outdoor Pollution Death Rate"
+                },
+                "y": {
+                    "field": "Population_Size",
+                    "type": "quantitative",
+                    "title": "Case Fatality Ratio"
+                },
+                "color": {
+                    "value": "#0000FF"
+                },
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "Outdoor_Pollution_Death_Rate",
+                        "type": "quantitative",
+                        "title": "Outdoor Pollution Death Rate"
+                    }
+                ]
+            }
+        }
+    ]
+}

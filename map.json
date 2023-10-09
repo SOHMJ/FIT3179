@@ -57,9 +57,9 @@
                     }
                 },
                 "color": {
-                    "field": "Deaths",
+                    "field": "Cases",
                     "type": "quantitative",
-                    "title": "Deaths",
+                    "title": "Cases",
                     "scale": {
                         "scheme": "reds"
                     }
@@ -76,14 +76,14 @@
                         "title": "Population Size"
                     },
                     {
+                        "field": "Cases",
+                        "type": "quantitative",
+                        "title": "Cases"
+                    },
+                    {
                         "field": "Deaths",
                         "type": "quantitative",
                         "title": "Deaths"
-                    },
-                    {
-                        "field": "Lockdown_Type",
-                        "type": "nominal",
-                        "title": "Lockdown Type"
                     }
                 ]
             }

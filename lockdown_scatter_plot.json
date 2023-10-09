@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Lockdown Vs COVID",
+    "data": {
+      "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+            "date": "date:\"%d/%m/%y\"",
+            "temp": "number"
+        }
+    }
+    },
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "Lockdown_Date",
+        "type": "temporal",
+        "title": "Lockdown Date"
+      },
+      "y": {
+        "field": "Cases",
+        "type": "quantitative",
+        "title": "Cases"
+      },
+      "color": {"field": "Lockdown_Type", "type": "nominal"},
+      "shape": {"field": "Lockdown_Type", "type": "nominal"}
+    }
+  }
+  
