@@ -2,7 +2,6 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 400,
-    "title": "Age Vs COVID",
     "data": {
         "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv"
     },
@@ -24,29 +23,85 @@
             ]
         }
     ],
-    "mark": "line",
-    "encoding": {
-        "x": {
-            "field": "Mean_Age_rounded",
-            "type": "ordinal",
-            "title": "Mean Age"
-        },
-        "y": {
-            "field": "average_Case_Fatality_Ratio",
-            "type": "quantitative",
-            "title": "Case Fatality Ratio"
-        },
-        "tooltip": [
-            {
-                "field": "Mean_Age_rounded",
-                "type": "quantitative",
-                "title": "Mean Age"
-            },
-            {
-                "field": "average_Case_Fatality_Ratio",
-                "type": "quantitative",
-                "title": "Case Fatality Ratio"
+    "layer": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Mean_Age_rounded",
+                    "type": "ordinal",
+                    "title": "Mean Age"
+                },
+                "y": {
+                    "field": "average_Case_Fatality_Ratio",
+                    "type": "quantitative",
+                    "title": "Case Fatality Ratio"
+                },
+                "tooltip": [
+                    {
+                        "field": "Mean_Age_rounded",
+                        "type": "quantitative",
+                        "title": "Mean Age"
+                    },
+                    {
+                        "field": "average_Case_Fatality_Ratio",
+                        "type": "quantitative",
+                        "title": "Case Fatality Ratio"
+                    }
+                ]
             }
-        ]
-    }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "dx": -235,
+                "dy": -195,
+                "fontSize": 12,
+                "fontStyle": "italic"
+            },
+            "encoding": {
+                "text": {
+                    "value": "Younger individuals are more vulnerable to pandemic."
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.Mean_Age_rounded == 14",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "bottom",
+                "dx": 0,
+                "dy": 155,
+                "fontSize": 12,
+                "fontStyle": "italic"
+            },
+            "encoding": {
+                "text": {
+                    "value": "COVID-19 fatalities are lower among the elderly."
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.Mean_Age_rounded == 46",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        }
+    ]
 }

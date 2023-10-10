@@ -2,7 +2,6 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 450,
-    "title": "The Correlation Between Population and COVID-19 Fatality",
     "projection": {
         "type": "equalEarth"
     },

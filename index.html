@@ -1,31 +1,86 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <link rel="stylesheet" href="styles.css">
-            
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            
-            <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-            <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-            <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-            <script src="vega_lite_vis.js"></script>
-            
-            <title>Unraveling the Factors Behind the Severity of COVID-19 Outcomes in Different Countries</title>
-        </head>
-        
-        <body>
-            <h1>Unraveling the Factors Behind the Severity of COVID-19 Outcomes in Different Countries</h1>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="vega_lite_vis.js"></script>
+
+    <title>COVID-19 Outcomes: Factors & Countries</title>
+</head>
+
+<body>
+    <h1>COVID-19 Outcomes: Factors & Countries</h1>
+    <div class="container">
+        <h2>Understanding the Choropleth Map: COVID-19 Cases by Country</h2>
+        <div class="graph">
             <div id="map">
-            </div>
+            </div class="top-left-text">
+            <p>Our choropleth map visualizes COVID-19 cases in different countries, offering insights into the
+                pandemic's global impact. While it might be intuitive to assume that countries with larger
+                populations would have more cases, the reality is more nuanced.
+                <br><br>
+                When analyzing the data, it's crucial to consider not only population size but also the area of each
+                country. Some densely populated countries might have a high number of cases due to the concentration
+                of people, even if the country's total land area is relatively small.
+                <br><br>
+                Conversely, countries with vast land areas and sparse populations might report fewer cases despite
+                their large size. The map allows us to visualize this complex relationship, offering a more accurate
+                perspective on the distribution of COVID-19 cases worldwide.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Does Tourism Impact COVID-19 Spread?</h2>
+        <div class="graph">
             <div id="tourism">
-            </div>
-            <div id="lockdown">
-            </div>
-            <div id="age">
-            </div>
-            <div id="pollution">
-            </div>
-        </body>
-    </html>
+            </div class="top-left-text">
+            <p>Despite variations in tourism levels, many countries enforced full lockdowns starting from February 24,
+                2020,
+                during the second wave of the COVID-19 outbreak.</p>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="left-div">
+            <h2>COVID-19 Fatality by Demographics</h2>
+            <div id="age"></div>
+            <p>The line chart presented here illustrates the average fatality rate corresponding to different mean age
+                categories. 
+                <br><br>
+                When the mean age of COVID-19 patients in a country is lower, the fatality rate tends to be
+                higher. Surprisingly, countries with a higher mean age among COVID-19 patients tend to have a lower
+                fatality rate. 
+                <br><br>
+                It's worth noting that babies and the elderly are not representative of the mean age for
+                COVID-19 patients in all countries.</p>
+        </div>
+        <div class="right-div">
+            <div id="pollution"></div>
+            <p>123</p>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="container">
+        <div class="graph" id="pollution"></div>
+    </div> -->
+
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

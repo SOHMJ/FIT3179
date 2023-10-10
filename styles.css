@@ -1,3 +1,104 @@
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #FF6600;
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF3300;
+    text-align: left;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 18px;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 18px;
+}
+
+.top-left-text {
+    text-align: left;
+    /* Align text horizontally to the left */
+    vertical-align: top;
+    /* Align text vertically to the top */
+}
+
+html {
+    background-color: #FFFFFF;
+    padding-top: 0%;
+    margin-top: 0%;
+    border-top: 0%;
+}
+
 body {
-    background-color: lightblue;
+    background-color: #FFDAB9;
+    height: 2000px;
+    width: 1380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid #FFDAB9;
+}
+
+.graph {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 18px;
+    margin-bottom: 50px;
+    margin-right: 0px;
+}
+
+.column-graph {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-div {
+    width: 42%;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.right-div {
+    width: 58%;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.graph:first-child {
+    width: 100vw;
+    height: 50vh;
 }

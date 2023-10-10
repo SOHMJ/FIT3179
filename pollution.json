@@ -22,7 +22,7 @@
             ]
         }
     ],
-    "mark": "circle",
+    "mark": "bar",
     "encoding": {
         "x": {
             "bin": {
@@ -32,7 +32,7 @@
             "type": "ordinal",
             "title": "Population Range",
             "axis": {
-                "labelAngle": 270
+                "labelAngle": 0
             }
         },
         "y": {
