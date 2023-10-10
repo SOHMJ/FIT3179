@@ -2,19 +2,39 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 400,
-    "title": "Pollution Vs COVID",
     "data": {
         "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv"
     },
     "transform": [
         {
             "calculate": "200000000 * floor(datum.Population_Size / 200000000)",
+            "as": "temp_population"
+        },
+        {
+            "calculate": "datum.temp_population === 0 ? '0 - 200M' : datum.temp_population === 200000000 ? '200M - 400M' : datum.temp_population === 600000000 ? '' : '1.2B - 1.4B'",
             "as": "Population_Category"
         },
         {
+            "aggregate": [
+                {
+                    "op": "average",
+                    "field": "Indoor_Pollution_Death_Rate",
+                    "as": "Indoor"
+                },
+                {
+                    "op": "average",
+                    "field": "Outdoor_Pollution_Death_Rate",
+                    "as": "Outdoor"
+                }
+            ],
+            "groupby": [
+                "Population_Category"
+            ]
+        },
+        {
             "fold": [
-                "Indoor_Pollution_Death_Rate",
-                "Outdoor_Pollution_Death_Rate"
+                "Indoor",
+                "Outdoor"
             ],
             "as": [
                 "PollutionType",
@@ -25,15 +45,13 @@
     "mark": "bar",
     "encoding": {
         "x": {
-            "bin": {
-                "step": 200000000
-            },
             "field": "Population_Category",
-            "type": "ordinal",
+            "type": "nominal",
             "title": "Population Range",
             "axis": {
                 "labelAngle": 0
-            }
+            },
+            "sort": ["0 - 200M", "200M - 400M", "", "1.2B - 1.4B"]
         },
         "y": {
             "field": "DeathRate",
@@ -42,6 +60,7 @@
         },
         "color": {
             "field": "PollutionType",
+            "type": "nominal",
             "title": "Pollution Type",
             "scale": {
                 "range": [
@@ -55,8 +74,8 @@
         },
         "tooltip": [
             {
-                "field": "Country",
-                "title": "Country"
+                "field": "Population_Category",
+                "title": "Population Category"
             },
             {
                 "field": "DeathRate",
