@@ -106,6 +106,16 @@
         "axisY": {
             "title": "Date",
             "format": "%d %b %y"
+        },
+        "axis": {
+            "labelFont": "Arial",
+            "titleFont": "Arial"
+        },
+        "title": {
+            "font": "Arial"
+        },
+        "text": {
+            "font": "Arial"
         }
     },
     "layer": [
