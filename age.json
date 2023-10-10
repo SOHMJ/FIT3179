@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Age Vs COVID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv"
+    },
+    "transform": [
+        {
+            "calculate": "datum.Mean_Age | 0",
+            "as": "Mean_Age_rounded"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Case_Fatality_Ratio",
+                    "as": "average_Case_Fatality_Ratio"
+                }
+            ],
+            "groupby": [
+                "Mean_Age_rounded"
+            ]
+        }
+    ],
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "Mean_Age_rounded",
+            "type": "ordinal",
+            "title": "Mean Age"
+        },
+        "y": {
+            "field": "average_Case_Fatality_Ratio",
+            "type": "quantitative",
+            "title": "Case Fatality Ratio"
+        },
+        "tooltip": [
+            {
+                "field": "Mean_Age_rounded",
+                "type": "quantitative",
+                "title": "Mean Age"
+            },
+            {
+                "field": "average_Case_Fatality_Ratio",
+                "type": "quantitative",
+                "title": "Case Fatality Ratio"
+            }
+        ]
+    }
+}

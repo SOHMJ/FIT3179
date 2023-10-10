@@ -1,0 +1,71 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Pollution Vs COVID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv"
+    },
+    "transform": [
+        {
+            "calculate": "200000000 * floor(datum.Population_Size / 200000000)",
+            "as": "Population_Category"
+        },
+        {
+            "fold": [
+                "Indoor_Pollution_Death_Rate",
+                "Outdoor_Pollution_Death_Rate"
+            ],
+            "as": [
+                "PollutionType",
+                "DeathRate"
+            ]
+        }
+    ],
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "bin": {
+                "step": 200000000
+            },
+            "field": "Population_Category",
+            "type": "ordinal",
+            "title": "Population Range",
+            "axis": {
+                "labelAngle": 270
+            }
+        },
+        "y": {
+            "field": "DeathRate",
+            "type": "quantitative",
+            "title": "Death Rate"
+        },
+        "color": {
+            "field": "PollutionType",
+            "title": "Pollution Type",
+            "scale": {
+                "range": [
+                    "steelblue",
+                    "orange"
+                ]
+            }
+        },
+        "opacity": {
+            "value": 0.7
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "title": "Country"
+            },
+            {
+                "field": "DeathRate",
+                "title": "Death Rate"
+            },
+            {
+                "field": "PollutionType",
+                "title": "Pollution Type"
+            }
+        ]
+    }
+}
