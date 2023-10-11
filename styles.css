@@ -4,7 +4,7 @@
 }
  */
 h1 {
-    font-family: Arial, sans-serif;
+    font-family: "Impact, fantasy";
     font-size: 56px;
     font-weight: bold;
     color: #FF6600;
@@ -21,7 +21,7 @@ h1 {
     text-align: left;
     margin-bottom: 0px;
     margin-top: 0px;
-    margin-left: 18px;
+    margin-left: 20px;
 }
 
 p {
@@ -32,14 +32,12 @@ p {
     text-align: left;
     margin-bottom: 20px;
     margin-left: 0px;
-    margin-right: 18px;
+    margin-right: 20px;
 }
 
 .top-left-text {
     text-align: left;
-    /* Align text horizontally to the left */
     vertical-align: top;
-    /* Align text vertically to the top */
 }
 
 html {
@@ -77,7 +75,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-left: 18px;
+    margin-left: 20px;
     margin-bottom: 50px;
     margin-right: 0px;
 }
@@ -96,14 +94,14 @@ body {
 
 .left-div {
     width: 42%;
-    margin-left: 18px;
-    margin-right: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .right-div {
     width: 58%;
-    margin-left: 18px;
-    margin-right: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .half-title {
@@ -115,4 +113,11 @@ body {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
+}
+
+.container-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
