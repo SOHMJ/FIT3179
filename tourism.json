@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
+    "width": 600,
     "height": 400,
     "data": {
         "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv",
@@ -87,7 +87,7 @@
             "type": "temporal",
             "title": "Date of First Fatality",
             "axis": {
-                "tickCount": 6
+                "tickCount": 7
             },
             "scale": {
                 "type": "utc",

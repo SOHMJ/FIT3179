@@ -71,8 +71,8 @@
                     "title": "Pollution Type",
                     "scale": {
                         "range": [
-                            "steelblue",
-                            "orange"
+                            "#FF0000",
+                            "#0000FF"
                         ]
                     }
                 },

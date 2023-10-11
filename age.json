@@ -37,6 +37,9 @@
                     "type": "quantitative",
                     "title": "Case Fatality Ratio"
                 },
+                "color": {
+                    "value": "#FFA500"
+                },
                 "tooltip": [
                     {
                         "field": "Mean_Age_rounded",
