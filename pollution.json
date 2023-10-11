@@ -63,7 +63,10 @@
                 "y": {
                     "field": "DeathRate",
                     "type": "quantitative",
-                    "title": "Death Rate"
+                    "title": "Death Rate",
+                    "scale": {
+                        "domain": [0, 120]
+                    }
                 },
                 "color": {
                     "field": "PollutionType",
@@ -100,8 +103,8 @@
                 "type": "text",
                 "align": "center",
                 "baseline": "bottom",
-                "dx": 50,
-                "dy": -100,
+                "dx": 53,
+                "dy": -160,
                 "fontSize": 12,
                 "fontStyle": "italic"
             },

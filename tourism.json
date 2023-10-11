@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 600,
-    "height": 400,
+    "height": 500,
     "data": {
         "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv",
         "format": {
@@ -15,12 +15,12 @@
     "params": [
         {
             "name": "Tourism_Above",
-            "value": 0,
+            "value": 10000,
             "bind": {
                 "input": "range",
-                "min": 0,
+                "min": 10000,
                 "max": 80000000,
-                "step": 2000,
+                "step": 10000,
                 "name": "Minimum Tourism: "
             }
         },
@@ -72,13 +72,13 @@
             "type": "temporal",
             "title": "Date of First Confirmed Case",
             "axis": {
-                "tickCount": 7
+                "tickCount": 17
             },
             "scale": {
                 "type": "utc",
                 "domain": [
-                    "2020-01-22",
-                    "2020-03-26"
+                    "2020-01-15",
+                    "2020-03-29"
                 ]
             }
         },
@@ -87,13 +87,13 @@
             "type": "temporal",
             "title": "Date of First Fatality",
             "axis": {
-                "tickCount": 7
+                "tickCount": 17
             },
             "scale": {
                 "type": "utc",
                 "domain": [
-                    "2020-01-23",
-                    "2020-04-27"
+                    "2020-01-16",
+                    "2020-05-03"
                 ]
             }
         }
@@ -106,19 +106,61 @@
         "axisY": {
             "title": "Date",
             "format": "%d %b %y"
-        },
-        "axis": {
-            "labelFont": "Arial",
-            "titleFont": "Arial"
-        },
-        "title": {
-            "font": "Arial"
-        },
-        "text": {
-            "font": "Arial"
         }
     },
     "layer": [
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 7,
+                "dy": -7,
+                "fontSize": 12,
+                "fontStyle": "italic"
+            },
+            "encoding": {
+                "text": {
+                    "value": "The COVID-19 outbreak originated in China"
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Country'] == 'China'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": -250,
+                "dy": -10,
+                "fontSize": 12,
+                "fontStyle": "italic"
+            },
+            "encoding": {
+                "text": {
+                    "value": "Guinea-Bissau was the last to be hit by COVID-19."
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Country'] == 'Guinea-Bissau'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
         {
             "mark": "circle",
             "encoding": {
@@ -214,58 +256,6 @@
                         "format": ".2f"
                     }
                 ]
-            }
-        },
-        {
-            "mark": {
-                "type": "text",
-                "align": "left",
-                "baseline": "middle",
-                "dx": 7,
-                "dy": -7,
-                "fontSize": 12,
-                "fontStyle": "italic"
-            },
-            "encoding": {
-                "text": {
-                    "value": "The COVID-19 outbreak originated in China"
-                },
-                "color": {
-                    "value": "black"
-                },
-                "opacity": {
-                    "condition": {
-                        "test": "datum['Country'] == 'China'",
-                        "value": 1
-                    },
-                    "value": 0
-                }
-            }
-        },
-        {
-            "mark": {
-                "type": "text",
-                "align": "left",
-                "baseline": "middle",
-                "dx": -50,
-                "dy": -10,
-                "fontSize": 12,
-                "fontStyle": "italic"
-            },
-            "encoding": {
-                "text": {
-                    "value": "Guinea-Bissau was the last to be hit by COVID-19."
-                },
-                "color": {
-                    "value": "black"
-                },
-                "opacity": {
-                    "condition": {
-                        "test": "datum['Country'] == 'Guinea-Bissau'",
-                        "value": 1
-                    },
-                    "value": 0
-                }
             }
         }
     ]

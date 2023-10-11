@@ -23,14 +23,15 @@
             "data": {
                 "graticule": {
                     "step": [
-                        0.1,
-                        0.1
+                        1,
+                        1
                     ]
                 }
             },
             "mark": {
                 "type": "geoshape",
-                "fill":"aliceblue"
+                "fill": "aliceblue",
+                "stroke": "transparent"
             }
         },
         {
