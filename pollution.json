@@ -74,13 +74,13 @@
                     "title": "Pollution Type",
                     "scale": {
                         "range": [
-                            "#FF0000",
-                            "#0000FF"
+                            "#E66100",
+                            "#5D3A9B"
                         ]
                     }
                 },
                 "opacity": {
-                    "value": 0.6
+                    "value": 1
                 },
                 "tooltip": [
                     {
@@ -130,8 +130,8 @@
                 "fill": "rgba(255, 0, 0, 0)",
                 "stroke": "#FF0000",
                 "strokeWidth": 3,
-                "width": 100,
-                "height": 30
+                "width": 98,
+                "height": 28
             },
             "encoding": {
                 "x": {"value": 420},

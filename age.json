@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
+    "width": 550,
     "height": 400,
     "data": {
         "url": "https://raw.githubusercontent.com/SOHMJ/Homework/main/COVID_Cases_Mortality_Features_By_Country.csv"
@@ -85,7 +85,7 @@
                 "type": "text",
                 "align": "left",
                 "baseline": "bottom",
-                "dx": 0,
+                "dx": 18,
                 "dy": 155,
                 "fontSize": 12,
                 "fontStyle": "italic"

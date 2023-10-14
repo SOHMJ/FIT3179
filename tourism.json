@@ -205,14 +205,14 @@
                             "Not Applicable"
                         ],
                         "range": [
-                            "#FF0000",
-                            "#0000FF",
-                            "#008000"
+                            "#d55e00",
+                            "#cc79a7",
+                            "#0072b2"
                         ]
                     }
                 },
                 "opacity": {
-                    "value": 0.6
+                    "value": 0.7
                 },
                 "tooltip": [
                     {
